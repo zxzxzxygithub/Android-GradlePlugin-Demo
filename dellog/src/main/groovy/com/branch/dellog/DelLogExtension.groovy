@@ -6,6 +6,6 @@ package com.branch.dellog
 class DelLogExtension {
 
 
-  String sourceDir;
+  String sourceDir
 
 }

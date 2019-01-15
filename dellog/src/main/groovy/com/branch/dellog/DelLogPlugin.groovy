@@ -11,27 +11,27 @@ class DelLogPlugin implements Plugin<Project> {
   void apply(Project project) {
 
 
-    project.extensions.create('dellogExtension', DelLogExtension);
+    project.extensions.create('dellogExtension', DelLogExtension)
 
     project.afterEvaluate {
       //在gradle 构建完之后执行
-      project.logger.error("dellogExtension : " + project.dellogExtension.sourceDir);
+      project.logger.error("dellogExtension : " + project.dellogExtension.sourceDir)
 
-      def rootDir = project.projectDir.toString().plus(project.dellogExtension.sourceDir);
+      def rootDir = project.projectDir.toString().plus(project.dellogExtension.sourceDir)
 
-      project.logger.error(rootDir);
+      project.logger.error(rootDir)
 
-      DelLogUtil.delLog(new File(rootDir));
+      DelLogUtil.delLog(new File(rootDir))
     }
 
     project.task('dellog', {
-      project.logger.error("dellogExtension : " + project.dellogExtension.sourceDir);
+      project.logger.error("dellogExtension : " + project.dellogExtension.sourceDir)
 
-      def rootDir = project.projectDir.toString().plus(project.dellogExtension.sourceDir);
+      def rootDir = project.projectDir.toString().plus(project.dellogExtension.sourceDir)
 
-      project.logger.error(rootDir);
+      project.logger.error(rootDir)
 
-      DelLogUtil.delLog(new File(rootDir));
+      DelLogUtil.delLog(new File(rootDir))
 
     })
 
